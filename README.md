@@ -5,7 +5,7 @@
 前端框架:`bootstrap`.<br>
 数据库:`mysql`.<br>
 连接池:`alibaba连接池`.<br>
- 使用方法:通过Maven进行导入相关的Jar包，修改resource下的jdbc.properties中的数据库相关信息后,运行index.jsp,即可运行项目。<br>
+>使用方法:通过Maven进行导入相关的Jar包，修改resource下的jdbc.properties中的数据库相关信息后,运行index.jsp,即可运行项目。<br>
 运行截图:<br>
 主页:<br>
 ![](https://github.com/SinceNovember/SSM_BBS/blob/master/photos/1.png)

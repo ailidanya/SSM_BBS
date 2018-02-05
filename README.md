@@ -7,4 +7,11 @@
 连接池:`alibaba连接池`.<br>
 使用方法:通过Maven进行导入相关的Jar包，修改resource下的jdbc.properties中的数据库相关信息后,运行index.jsp,即可运行项目。<br>
 运行截图:
-![](
+主页:<br>
+![](https://github.com/SinceNovember/SSM_BBS/blob/master/photos/1.png)
+详细页面:<br>
+![](https://github.com/SinceNovember/SSM_BBS/blob/master/photos/2.png)
+个人信息页面:<br>
+![](https://github.com/SinceNovember/SSM_BBS/blob/master/photos/3.png)
+根据关键字查询后界面:<br>
+![](https://github.com/SinceNovember/SSM_BBS/blob/master/photos/4.png)

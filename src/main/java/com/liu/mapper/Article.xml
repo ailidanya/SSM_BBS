@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liu.dao.ArticleDao">
+    <resultMap type="Article" id="ArticleResult">
+        <id property="aid" column="aid"></id>
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <result property="date" column="date" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+        <result property="lable" column="lable"/>
+        <result property="status" column="status"/>
+        <association property="author" column="uid" select="com.liu.dao.UserDao.getUserByID"></association>
+<!--         <association property="author" javaType="User"> -->
+<!--             <id column="uid" property="uid"/> -->
+<!--             <result column="username" property="username"/> -->
+<!--             <result column="password" property="password"/> -->
+<!--             <result column="headimg" property="headimg"/> -->
+<!--         </association> -->
+    </resultMap>
+    <select id="getArticleList" resultMap="ArticleResult">
+        SELECT * FROM ARTICLE ORDER BY AID DESC
+    </select>
+    <select id="getArticlePageList" resultMap="ArticleResult">
+        SELECT * FROM article
+        order by aid desc limit #{currentPage},#{pageSize}
+    </select>
+    <select id="getArticleByID" resultMap="ArticleResult">
+        select * from 
+        article
+        where  aid=#{aid}
+    </select>
+    <select id="getArticleListByStatus" resultMap="ArticleResult">
+        select * from article
+        where status in
+        <foreach item="item" collection="list" index="index"  open="(" separator="," close=")">#{item}</foreach>
+        order by aid desc
+    </select>
+    <insert id="addArticle">
+        insert into article(title,content,date,uid,lable) values(#{title},#{content},#{date},#{uid},#{lable})
+    </insert>
+    <delete id="deleteArticleByID">
+        delete from article where aid=#{aid}
+    </delete>
+    <select id="getArticleByUID" resultType="Article">
+        select * from article where uid=#{uid} order by aid desc
+    </select>
+    <select id="searchArticleByKey" resultMap="ArticleResult">
+        select * from article where title like '%' #{key} '%' order by aid desc
+    </select>
+</mapper>

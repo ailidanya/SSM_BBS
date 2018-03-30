@@ -91,7 +91,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of user
+-- Records of userq
 -- ----------------------------
 INSERT INTO `user` VALUES ('21', '6666', '', '/resources/imgs/bizhi.jpg');
 INSERT INTO `user` VALUES ('22', '123', '37693cfc748049e45d87b8c7d8b9aacd', '/resources/imgs/1503319695135Qqq.jpg');
